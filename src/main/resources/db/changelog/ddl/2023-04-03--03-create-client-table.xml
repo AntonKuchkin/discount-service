@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Anton Kuchkin" id="2023-04-03--03-create-client-table">
+        <createTable schemaName="public" tableName="client">
+
+            <column name="id" type="UUID" >
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="card_number" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="number_of_points" type="integer">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Anton Kuchkin"
+               id="2023-04-03--01-add-fk-column-client-id-on-check-table">
+        <addColumn tableName="check">
+            <column name="client_id" type="UUID">
+                <constraints nullable="false"
+                             foreignKeyName="fk_client_id_on_check"
+                             references="client(id)"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

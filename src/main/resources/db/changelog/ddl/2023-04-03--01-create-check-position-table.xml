@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Anton Kuchkin" id="2023-04-03--01-create-check-position-table">
+        <createTable schemaName="public" tableName="check_position">
+
+            <column name="id_check" type="UUID" >
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="position_amount" type="integer">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

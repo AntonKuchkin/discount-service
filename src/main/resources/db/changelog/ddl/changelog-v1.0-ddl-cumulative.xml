@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="Anton Kuchkin" id="ddl-v1.0">
+        <tagDatabase tag="1.0"/>
+    </changeSet>
+
+    <include file="db/changelog/ddl/2023-04-03--01-create-check-position-table.xml"/>
+    <include file="db/changelog/ddl/2023-04-03--02-create-check-table.xml"/>
+    <include file="db/changelog/ddl/2023-04-03--03-create-client-table.xml"/>
+
+</databaseChangeLog>
