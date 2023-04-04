@@ -1,5 +1,7 @@
 package com.example.discountservice.service.api;
 
+import lombok.NonNull;
+
 public interface ScoringService {
 
     /**
@@ -7,5 +9,5 @@ public interface ScoringService {
      *
      * @param sumOfAllChecks - Общая сумма по чекам.
      */
-    Integer countPoints(Double sumOfAllChecks);
+    Integer countPoints(@NonNull Double sumOfAllChecks);
 }

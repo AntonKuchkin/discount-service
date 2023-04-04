@@ -11,4 +11,6 @@ public class PointsConstants {
     public static final Integer MINIMUM_VALUE_OF_THE_BALL = 30;
     public static final Integer AVERAGE_VALUE_OF_THE_BALL = 30;
     public static final Integer MAXIMUM_VALUE_OF_THE_BALL = 50;
+    public static final Integer POINTS_AT_CREATION = 0;
+
 }

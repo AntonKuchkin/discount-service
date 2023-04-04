@@ -1,7 +1,7 @@
 package com.example.discountservice.mapper;
 
 import com.example.discountservice.config.MappersConfig;
-import com.example.discountservice.controller.dto.Points;
+import com.example.discountservice.controller.dto.point.PointsResponse;
 import com.example.discountservice.controller.dto.check.CheckRequest;
 import com.example.discountservice.entity.CheckEntity;
 import com.example.discountservice.entity.ClientEntity;
@@ -16,7 +16,7 @@ import java.util.Set;
 public interface DiscountMapper {
 
     @Mapping(target = "sum", source = "numberOfPoints")
-    Points clientEntityToPoints(ClientEntity client);
+    PointsResponse clientEntityToPoints(ClientEntity client);
 
     List<CheckEntity> checkDtoListToChecksEntity(Set<CheckRequest> checks);
 

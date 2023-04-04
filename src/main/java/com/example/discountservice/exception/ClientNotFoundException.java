@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class ClientNotFoundException extends BaseNotFoundException {
 
-    private static final String CLIENT_NOT_FOUND_ERROR = "Клиента не найден, id: %s";
+    private static final String CLIENT_NOT_FOUND_ERROR = "Клиент не найден, id: %s";
 
     protected ClientNotFoundException(String message) {
         super(message);

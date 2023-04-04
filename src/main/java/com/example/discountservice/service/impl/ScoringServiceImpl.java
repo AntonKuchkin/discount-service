@@ -1,10 +1,9 @@
 package com.example.discountservice.service.impl;
 
 import com.example.discountservice.service.api.ScoringService;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 import static com.example.discountservice.constant.PointsConstants.AVERAGE_VALUE_OF_THE_BALL;
 import static com.example.discountservice.constant.PointsConstants.MAXIMUM_CHECK_AMOUNT;
@@ -17,7 +16,7 @@ import static com.example.discountservice.constant.PointsConstants.MINIMUM_VALUE
 public class ScoringServiceImpl implements ScoringService {
 
     @Override
-    public Integer countPoints(Double sumOfAllChecks) {
+    public Integer countPoints(@NonNull Double sumOfAllChecks) {
         Integer points = 0;
         if (sumOfAllChecks <= MINIMUM_CHECK_AMOUNT) {
             points = (int) (sumOfAllChecks / MAXIMUM_VALUE_OF_THE_BALL);
