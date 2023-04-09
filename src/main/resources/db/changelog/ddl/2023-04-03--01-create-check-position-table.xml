@@ -8,7 +8,7 @@
     <changeSet author="Anton Kuchkin" id="2023-04-03--01-create-check-position-table">
         <createTable schemaName="public" tableName="check_position">
 
-            <column name="id_check" type="UUID" >
+            <column name="id_position" type="bigint" >
                 <constraints nullable="false" primaryKey="true"/>
             </column>
 

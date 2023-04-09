@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -21,11 +20,11 @@ import java.util.UUID;
 public class CheckPositionEntity {
 
     @Id
-    @Column(name = "id_check", nullable = false)
-    private UUID idCheck;
+    @Column(name = "id_position", nullable = false)
+    private Long id;
 
     @Column(name = "position_amount", nullable = false)
-    private Integer positionAmount;
+    private Integer positionSum;
 
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)

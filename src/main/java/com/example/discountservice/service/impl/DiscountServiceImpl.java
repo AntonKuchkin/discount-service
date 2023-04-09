@@ -25,6 +25,10 @@ public class DiscountServiceImpl implements DiscountService {
     @Override
     public void checkProcessingAndPointsAccrual(@NonNull Set<CheckRequest> checks) {
         List<CheckEntity> checkEntities = mapper.checkDtoListToChecksEntity(checks);
+        for (CheckEntity checkEntity : checkEntities) {
+            checkEntity.setClient(clientService.getClientEntityByCardNumber(checkEntity.getCardNumber()));
+        }
+
         scoring(checkEntities);
     }
 

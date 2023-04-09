@@ -4,6 +4,7 @@ import com.example.discountservice.controller.dto.check.CheckRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -17,4 +18,10 @@ public interface DiscountControllerApi {
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Обработка чеков и начисление балов")
     void checkProcessingAndPointsAccrual (@RequestBody Set<CheckRequest> checks);
+
+//    @PatchMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    @Operation(summary = "Снятие балов")
+//    void withdrawalOfPointsFromTheClient(@RequestBody)
+
 }

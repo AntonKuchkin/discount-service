@@ -2,10 +2,8 @@ package com.example.discountservice.service.api;
 
 import com.example.discountservice.controller.dto.client.ClientCreateRequest;
 import com.example.discountservice.controller.dto.client.ClientResponse;
-import com.example.discountservice.controller.dto.point.PointsResponse;
+import com.example.discountservice.entity.ClientEntity;
 import lombok.NonNull;
-
-import java.util.UUID;
 
 public interface ClientService {
 
@@ -25,17 +23,18 @@ public interface ClientService {
     void recordingPointsForTheClientByCardNumber(@NonNull String cardNumber, @NonNull Double sum);
 
     /**
-     * Получение информации о балах клиента по id в БД.
+     * Получение информации о балах клиента по номеру карты в БД.
      *
-     * @param id - идентификатор клиента в БД
+     * @param cardNumber - номер карты.
      * @return - Количество доступных балов.
      */
-    PointsResponse getPointsById(@NonNull UUID id);
+    ClientResponse getClientByCardNumber(@NonNull String cardNumber);
 
     /**
-     * Метод создает нового клиента
+     * Получение сущности клиента по номеру карты в БД.
      *
-     * @param id - id клиента.
+     * @param cardNumber - номер карты.
+     * @return - сущность клиента.
      */
-    ClientResponse getClientById(@NonNull UUID id);
+    ClientEntity getClientEntityByCardNumber(String cardNumber);
 }

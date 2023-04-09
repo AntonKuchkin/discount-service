@@ -7,14 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
-import javax.validation.constraints.NotBlank;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientCreateRequest {
 
-//    @Length(min = 20, max = 20)
+    @Length(min = 20, max = 20)
     @JsonProperty(required = true)
     @Schema(description = "Номер карты")
     private String cardNumber;
