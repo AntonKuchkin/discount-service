@@ -6,7 +6,7 @@
                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet author="Anton Kuchkin" id="2023-04-03--02-create-check-table">
-        <createTable schemaName="public" tableName="check">
+        <createTable schemaName="public" tableName="checks">
 
             <column name="id" type="UUID" >
                 <constraints nullable="false" primaryKey="true"/>
@@ -29,7 +29,7 @@
             <column name="check_id" type="UUID">
                 <constraints nullable="false"
                              foreignKeyName="fk_check_id_on_check_position"
-                             references="check(id)"/>
+                             references="checks(id)"/>
             </column>
         </addColumn>
     </changeSet>

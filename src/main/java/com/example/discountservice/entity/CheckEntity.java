@@ -3,6 +3,7 @@ package com.example.discountservice.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.CascadeType;
@@ -20,10 +21,13 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "check")
+@Table(name = "checks")
 public class CheckEntity {
 
     @Id
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id", nullable = false)
     private UUID id;
 

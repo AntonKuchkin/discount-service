@@ -25,7 +25,7 @@
 
     <changeSet author="Anton Kuchkin"
                id="2023-04-03--01-add-fk-column-client-id-on-check-table">
-        <addColumn tableName="check">
+        <addColumn tableName="checks">
             <column name="client_id" type="UUID">
                 <constraints nullable="false"
                              foreignKeyName="fk_client_id_on_check"
